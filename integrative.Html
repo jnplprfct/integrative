@@ -50,8 +50,11 @@
 			<label>Address</label>
 			<input type="text" name="name" value="">
 		</div>
- 		<div class = "input-group">
-			<button class = "btn" type ="submit" name ="save" > Save </button>
+ 		<div class="input-group">
+		<?php if ($edit_state == false): ?>
+			<button type ="submit" name="save" class="btn">Save</button>
+		<?php else:?>
+			<button class="btn" type="submit" name="update" >Update</button>
 		</div>
 		</form>
 		
