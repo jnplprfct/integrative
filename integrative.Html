@@ -2,7 +2,7 @@
 
 	if (isset($_GET['edit'])) {
 		$id = $_GET['edit'];
-		
+		$edit_state = true ;
 		$rec = mysqli_query($db, "SELECT * FROM information WHERE id=$id"); 
 		$record = mysqli_fetch_array($rec);
 		$name = $record['name'] ;
@@ -48,10 +48,10 @@
 				<td><? php echo $row['name']; ?></td>
 				<td><? php echo $row['address']; ?></td>
 				<td>
-					<a href = "#"> Edit </a>
+					<a class="edit_btn" href = "Integrative.php?edit=<?php echo $row['id']; ?>"> Edit </a>
 				</td>
 				<td>
-					<a href = "#"> Delete </a>
+					<a class = "del_btn" href = "php_code.php?del=<?php echo $row['id']; ?>"> Delete </a>
 				</td>
 			</tr>
 			<?php }?>
