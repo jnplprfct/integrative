@@ -22,4 +22,13 @@
 		$address = mysql_real_escape_string($_POST['address']);
 		$id = mysql_real_escape_string($_POST['id']);
 	}
+
+	if (isset($_GET['del'])) {
+		$id = $_GET['del'];
+		mysqli_query($db,"DELETE FROM into WHERE is= $id");
+		$_SESSION['msg' = "Information Deleted";
+		header('location: Integrative.php');
+	}
 	$results = mysqli_query($db, "SELECT * FROM information");
+
+?>
