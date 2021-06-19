@@ -16,3 +16,10 @@
 		$_SESSION['message'] = "Address saved"; 
 		header('location: index.php');
 	}
+
+	if (isset($_POST ['update'])) {
+		$name = mysql_real_escape_string($_POST['name']);
+		$address = mysql_real_escape_string($_POST['address']);
+		$id = mysql_real_escape_string($_POST['id']);
+	}
+	$results = mysqli_query($db, "SELECT * FROM information");
